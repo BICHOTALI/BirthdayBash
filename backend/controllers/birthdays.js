@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
 router.get('/:birthdayId', async (req, res) => {
     let birthdayId = Number(req.params.birthdayId)
     if (isNaN(birthdayId)) {
-        res.status(404).json({ message: Invalid id "${birthdayId}" })
+        res.status(404).json({ message: `Invalid id "${birthdayId}" `})
     } else {
         const birthday = await Birthday.findOne({
             where: { birthdayId: birthdayId },
