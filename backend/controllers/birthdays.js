@@ -39,7 +39,7 @@ router.get('/:birthdayId', async (req, res) => {
             }
         })
         if (!birthday) {
-            res.status(404).json({ message: Could not find place with id "${placeId}" })
+            res.status(404).json({ message: `Could not find place with id "${placeId}"` })
         } else {
             res.json(birthday)
         }
@@ -49,13 +49,13 @@ router.get('/:birthdayId', async (req, res) => {
 router.put('/:birthdayId', async (req, res) => {
     let birthdayId = Number(req.params.birthdayId)
     if (isNaN(birthdayId)) {
-        res.status(404).json({ message: Invalid id "${birthdayId}" })
+        res.status(404).json({ message: `Invalid id "${birthdayId}"` })
     } else {
         const birthday = await Birthday.findOne({
             where: { birthdayId: birthdayId },
         })
         if (!birthday) {
-            res.status(404).json({ message: Could not find birthday with id "${birthdayId}" })
+            res.status(404).json({ message: `Could not find birthday with id "${birthdayId}" `})
         } else {
             Object.assign(birthday, req.body)
             await birthday.save()
