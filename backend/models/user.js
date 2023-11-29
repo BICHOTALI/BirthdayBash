@@ -3,13 +3,13 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-//   class User extends Model {
+  class User extends Model {
 
-//     static associate({ Comment }) {
-//       User.hasMany(Comment, { as: 'author', foreignKey: 'author_id' })
-//     }
+    // static associate({ Comment }) {
+    //   User.hasMany(Comment, { as: 'author', foreignKey: 'author_id' })
+    // }
 
-//   };
+  };
   User.init({
     userId: {
       type: DataTypes.SMALLINT,
