@@ -53,7 +53,7 @@ function EditBirthdayForm({ birthdayId }) {
       body: JSON.stringify(birthday),
     });
 
-    history.push('/places');
+    history.push('/birthdays');
   };
 
   return (

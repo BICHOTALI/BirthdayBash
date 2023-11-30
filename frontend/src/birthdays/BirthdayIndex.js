@@ -16,20 +16,17 @@ function BirthdayIndex(data) {
 		fetchData()
 	}, [])
 
-	let placesFormatted = places.map((place) => {
+	let birthdaysFormatted = birthdays.map((birthday) => {
 		return (
-			<div className="col-sm-6" key={place.placeId}>
+			<div key={birthday.birthdayId}>
 				<h2>
-					<a href="#" onClick={() => history.push(`/places/${place.placeId}`)} >
-						{place.name}
+					<a href="#" onClick={() => history.push(`/birthdays/${birthday.birthdayId}`)} >
+						{birthday.name}
 					</a>
 				</h2>
+				<img style={{ maxWidth: 200 }} src={birthday.pic} alt={birthday.name} />
 				<p className="text-center">
-					{place.cuisines}
-				</p>
-				<img style={{ maxWidth: 200 }} src={place.pic} alt={place.name} />
-				<p className="text-center">
-					Located in {place.city}, {place.state}
+					HAPPY BIRTHDAY on {birthday.date}
 				</p>
 			</div>
 		)
@@ -38,7 +35,7 @@ function BirthdayIndex(data) {
 		<main>
 			<h1>Birthday</h1>
 			<div className="row">
-				{placesFormatted}
+				{birthdaysFormatted}
 			</div>
 		</main>
 	)
