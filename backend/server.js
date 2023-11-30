@@ -6,6 +6,7 @@ const userController = require('./controllers/users')
 const birthdayController = require('./controllers/birthdays')
 
 const app = express()
+
 const { Sequelize } = require('sequelize')
 require('dotenv').config();
 
@@ -19,6 +20,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 app.use('/users', userController)
 app.use('/birthdays', birthdayController)
+
 
 // SEQUELIZE CONNECTION
 const sequelize = new Sequelize(process.env.PG_URI)
